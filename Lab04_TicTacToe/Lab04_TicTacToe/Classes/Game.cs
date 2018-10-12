@@ -30,9 +30,17 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
+            //TODO: Complete this method and utilize the rest of the class structure to play the game.
+            int counter = 0;
+            
+            while (CheckForWinner(Board) == false || counter <9)
+            {
+                counter++;
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
 
+
+
+            }
 			/*
 			 While there isn't a winner determined or too many turns have been taken,
 			 allow each player to see the board and take a turn.
@@ -41,6 +49,7 @@ namespace Lab04_TicTacToe.Classes
 			 board so the next player can accurately choose. 
 			 Once a winner is determined, display the board and return a winner 
 			 */
+             return pl
 		}
 
 
