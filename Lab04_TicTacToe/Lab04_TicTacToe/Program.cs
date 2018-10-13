@@ -1,6 +1,7 @@
 ﻿using Lab04_TicTacToe.Classes;
 using System;
 
+
 namespace Lab04_TicTacToe
 {
 	class Program
@@ -8,11 +9,12 @@ namespace Lab04_TicTacToe
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Let's Play Tic Tac Toe!");
-            PlayGame();
+            
 		}
 
 		static void PlayGame()
 		{
+            
             // TODO: Instantiate your players
             Console.WriteLine("Player 1, enter your name: ");
             string player1Name = Console.ReadLine();

@@ -36,7 +36,9 @@ namespace Lab04_TicTacToe.Classes
             while (CheckForWinner(Board) == false || counter <9)
             {
                 counter++;
-
+                Board.DisplayBoard();
+                Player.TakeTurn(Board.GameBoard);
+                Player.GetPosition(Board.GameBoard);
 
 
 
