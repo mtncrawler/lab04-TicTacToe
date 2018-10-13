@@ -9,13 +9,13 @@ namespace Lab04_TicTacToe
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Let's Play Tic Tac Toe!");
-            
+            PlayGame();
 		}
 
 		static void PlayGame()
 		{
             
-            // TODO: Instantiate your players
+            // DONE: Instantiate your players
             Console.WriteLine("Player 1, enter your name: ");
             string player1Name = Console.ReadLine();
 
@@ -37,15 +37,19 @@ namespace Lab04_TicTacToe
             };
 
             // Create the Game
-            //Game game = new Game(player1, player2);
+            Game game = new Game(player1, player2);
 
 
             // Play the Game
             // Output the winner
-
-
-
-
+            game.Play();
+            if(game.Play() != null)
+            {
+                Console.WriteLine($"{game.Play().Name}, you are the winner!");
+            } else
+            {
+                Console.WriteLine("It's a draw!");
+            }
 
         }
     }
