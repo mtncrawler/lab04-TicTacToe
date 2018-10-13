@@ -41,26 +41,30 @@ namespace Lab04_TicTacToe.Classes
 			 Once a winner is determined, display the board and return a winner 
 			 */
             int counter = 0;
-          
-            while (CheckForWinner(Board) == false || counter < 9)
+            Player activePlayer;
+
+            while (!CheckForWinner(Board) && counter < 9)
             {
                 Board.DisplayBoard();
-                Player activePlayer = NextPlayer();
+                activePlayer = NextPlayer();
                 activePlayer.TakeTurn(Board);
+                SwitchPlayer();
                 counter++;
-
-                if (CheckForWinner(Board))
-                {
-                    Board.DisplayBoard();
-                    return activePlayer;
-                } else
-                {
-                    SwitchPlayer();
-                    Console.Clear();
-                }
-                
+                Console.Clear();
             }
-            return null;
+
+            if (CheckForWinner(Board))
+            {
+                SwitchPlayer();
+                Winner = NextPlayer();
+                Board.DisplayBoard();
+                return Winner;
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
 
