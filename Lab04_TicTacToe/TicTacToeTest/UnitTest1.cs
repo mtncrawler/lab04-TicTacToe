@@ -71,5 +71,38 @@ namespace TicTacToeTest
 
             Assert.True(game.CheckForWinner(game.Board));
         }
+
+        /// <summary>
+        /// test for player switch
+        /// </summary>
+       [Fact]
+       public void PlayerSwitch()
+        {
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Game game = new Game(p1, p2);
+
+            p1.IsTurn = true;
+            game.SwitchPlayer();
+
+            Assert.True(p2.IsTurn);
+        }
+
+        /// <summary>
+        /// test for position correlation to array index
+        /// </summary>
+        [Fact]
+        public void PositionCorrelatesToArrayIndex()
+        {
+            Player p1 = new Player();
+            Player p2 = new Player();
+            Game game = new Game(p1, p2);
+
+            Position test = new Position(0, 0);
+            Position coordinates = Player.PositionForNumber(1);
+
+            Assert.True(test.Row == coordinates.Row && test.Column == coordinates.Column);
+        }
+        
     }
 }
